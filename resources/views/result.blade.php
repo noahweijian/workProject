@@ -477,6 +477,9 @@ ZH
 <div class="row">
     <input id="name" name="name" value="" placeholder="Key in your name">
     <input type="button" id="download" value="Download" />
+    <a href="{{ url()->previous() }}">
+        <input type="button" id="back" value="Back" />
+    </a>
 </div>
         <script>
             $(document).ready(function() {
