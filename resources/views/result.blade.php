@@ -407,19 +407,11 @@
 <body class="antialiased">
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
+        <input id="name" name="name" value="" placeholder="Key in the file name. Default following CW week eg: CW7.txt" style="width: 500px;"><br>
+        <input class="btn btn-success" type="button" id="download" value="Download" />
+        <a href="{{ url()->previous() }}">
+            <input class="btn btn-danger" type="button" id="back" value="Back" />
+        </a>
 
 
         <textarea style="margin-left:90px" ;name="history" cols="125" label="notes" rows="40" wrap="virtual"
@@ -504,11 +496,7 @@ ZH
 @endforeach
 </textarea>
 <div class="row">
-    <input id="name" name="name" value="" placeholder="Key in your name">
-    <input type="button" id="download" value="Download" />
-    <a href="{{ url()->previous() }}">
-        <input type="button" id="back" value="Back" />
-    </a>
+
 </div>
         <script>
             $(document).ready(function() {
@@ -521,7 +509,7 @@ ZH
                         type: 'text/plain'
                     });
                     // Specify the name of the file to be saved
-                    var fileNameToSaveAs = document.getElementById('name').value + '-' + 'CW' + {{ $week }} + ".txt";
+                    var fileNameToSaveAs = document.getElementById('name').value + 'CW' + {{ $week }} + ".txt";
 
                     // Optionally allow the user to choose a file name by providing
                     // an imput field in the HTML and using the collected data here
