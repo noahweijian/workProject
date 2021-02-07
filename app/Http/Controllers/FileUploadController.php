@@ -22,7 +22,7 @@ class FileUploadController extends Controller
      */
     public function fileUploadPost(FileUploadPostRequest $request)
     {
-        $data = Excel::toCollection(new ResultsImport, $request->file)->toArray();
+        $data = Excel::toArray(new ResultsImport, $request->file);
 
         $results = Arr::collapse($data);
 

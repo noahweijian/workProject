@@ -421,7 +421,7 @@
         <textarea style="margin-left:90px" ;name="history" cols="200" label="notes" rows="50" wrap="virtual"
             id="content" disabled>CW{{ $week }}&#13;&#10; @foreach ($results as $result)
 
-************************* {{ $result['campaign_id'] }} ************************&#13;&#10;
+************************* @if (isset($result['vc'])){{ $result['vc'] }}@else{{ $result['campaign_id'] }}@endif ************************&#13;&#10;
 -----------------PLACEMENT-----------
 {{ $result['onsite_placement'] }} @isset($result['flash_sale'])
  FS
