@@ -504,6 +504,11 @@ ENDS IN
 ------------------TITLE/SUBTITLE----------
 {{ $result['title'] }}
 {{ $result['subtitle'] }}
+
+@if ($result['country'] === 'HK')
+{{ $result['title_zh'] }}
+{{ $result['subtitle_zh'] }}
+@endif
 &#13;
 ---------------------VISUAL---------------
 @if ($result['country'] === 'HK')
