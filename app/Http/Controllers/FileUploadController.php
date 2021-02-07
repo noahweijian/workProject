@@ -8,6 +8,7 @@ use DateTime;
 use DateTimeZone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FileUploadController extends Controller
@@ -25,6 +26,14 @@ class FileUploadController extends Controller
         $data = Excel::toArray(new ResultsImport, $request->file);
 
         $results = Arr::collapse($data);
+
+        Validator::make($results, [
+            '*.country' => 'required',
+            '*.segment' => 'required',
+            // '*.relative_path' => 'required',
+            // '*.naming_convention' => 'required'
+        ])->validate();
+
 
         $date = new DateTime(now());
         $timezone = new DateTimeZone('Asia/Kuala_Lumpur');

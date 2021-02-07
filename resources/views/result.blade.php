@@ -413,8 +413,20 @@
             <input class="btn btn-danger" type="button" id="back" value="Back" />
         </a>
     </div>
+    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+
         <form action="{{ route('file.upload.post') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
