@@ -419,8 +419,32 @@
         @endif
 
         <textarea style="margin-left:90px" ;name="history" cols="200" label="notes" rows="50" wrap="virtual"
-            id="content" disabled>CW{{ $week }}&#13;&#10; @foreach ($results as $result)
+            id="content" disabled>CW{{ $week }}&#13;&#10; @foreach ($results as $result)&#13;
+@if ($country === "HK")
+https://static-hk.zacdn.com
 
+*LEFT/RIGHT SKINNY COLOUR CWXX*
+Kids:
+left: #fe4f3b (Font-color:#fff)
+right: #8bfcde (Font-color:#000)
+
+Shop Now
+立即搶購
+
+Men:
+left: #fe4f3b (Font-color:#fff)
+right: #8bfcde (Font-color:#000)
+
+**** LP BANNER ****
+<div class="box"><img src="https://static-hk.zacdn.com/cms/2020/cw50/Innisfree/en/DESKTOP_LP.jpg" alt="" /></div>
+
+**** CD TIMER COPIES ****
+ENDS IN
+限時優惠即將結束
+
+熱門品牌
+@endif
+&#13;&#10;
 ************************* @if (isset($result['vc'])){{ $result['vc'] }}@else{{ $result['campaign_id'] }}@endif ************************&#13;&#10;
 -----------------PLACEMENT-----------
 {{ $result['onsite_placement'] }} @isset($result['flash_sale'])

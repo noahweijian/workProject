@@ -31,13 +31,13 @@ class FileUploadController extends Controller
 
         $local = $date->setTimezone($timezone);
 
-
+        $country = $results[0]['country'];
         $week = $local->format('W');
 
         // // dd($week);
         // dd($results);
 
-        return view('result')->with('results', $results)->with('week', $week + 2);
+        return view('result')->with('results', $results)->with('week', $week + 2)->with('country', $country);
 
     }
 }
