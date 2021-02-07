@@ -7,9 +7,12 @@
 
     <title>CSV TO TXT CONVERTER</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <style>
@@ -418,8 +421,9 @@
             </div>
         @endif
 
-        <textarea style="margin-left:90px" ;name="history" cols="200" label="notes" rows="50" wrap="virtual"
-            id="content" disabled>CW{{ $week }}&#13;&#10; @foreach ($results as $result)&#13;
+
+        <textarea style="margin-left:90px" ;name="history" cols="125" label="notes" rows="40" wrap="virtual"
+            id="content" disabled>CW{{ $week }}&#13;&#10;
 @if ($country === "HK")
 https://static-hk.zacdn.com
 
@@ -444,7 +448,8 @@ ENDS IN
 
 熱門品牌
 @endif
-&#13;&#10;
+&#13;&#10;@foreach ($results as $result)&#13;
+
 ************************* @if (isset($result['vc'])){{ $result['vc'] }}@else{{ $result['campaign_id'] }}@endif ************************&#13;&#10;
 -----------------PLACEMENT-----------
 {{ $result['onsite_placement'] }} @isset($result['flash_sale'])

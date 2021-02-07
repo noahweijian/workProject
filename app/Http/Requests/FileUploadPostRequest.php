@@ -16,6 +16,14 @@ class FileUploadPostRequest extends FormRequest
         return true;
     }
 
+    public function message()
+    {
+        return [
+            'file.required' => 'A csv file is required',
+            'body.required' => 'A message is required',
+        ];
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +32,7 @@ class FileUploadPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'mimes:csv,xlsx,xls|required'
+            'file' => 'mimes:csv,xlsx,xls|required|file'
             //
         ];
     }
