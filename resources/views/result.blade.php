@@ -502,12 +502,16 @@ ENDS IN
 @endif
 &#13;
 ------------------TITLE/SUBTITLE----------
+@isset($result['title'], $result['subtitle'])
 {{ $result['title'] }}
 {{ $result['subtitle'] }}
+@endisset
 
 @if ($result['country'] === 'HK')
+@isset($result['title_zh'], $result['subtitle_zh'])
 {{ $result['title_zh'] }}
 {{ $result['subtitle_zh'] }}
+@endisset
 @endif
 &#13;
 ---------------------VISUAL---------------
