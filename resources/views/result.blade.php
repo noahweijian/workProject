@@ -178,7 +178,7 @@
         }
 
         .min-h-screen {
-            min-height: 100vh
+            min-height: 10vh
         }
 
         .overflow-hidden {
@@ -407,14 +407,33 @@
 <body class="antialiased">
     <div
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        <input id="name" name="name" value="" placeholder="Key in the file name. Default following CW week eg: CW7.txt" style="width: 500px;"><br>
+        <input id="name" name="name" value="" placeholder="Key in the file name. Default following CW week eg: CW7.txt" style="width: 500px; height: 37px; border:1px solid black" ><br>
         <input class="btn btn-success" type="button" id="download" value="Download" />
         <a href="{{ url()->previous() }}">
             <input class="btn btn-danger" type="button" id="back" value="Back" />
         </a>
+    </div>
+    <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        <form action="{{ route('file.upload.post') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <label for="file-upload" class="btn btn-outline-secondary">
+                    Upload Another File
+                </label>
+                {{-- <div class="col-md-6"> --}}
+                <input type="file" name="file" class="form-control" id="file-upload" style="display: none">
+                {{-- </div> --}}
 
+                <div class="justify-center">
+                    <button type="submit" class="btn btn-success">Upload</button>
+                </div>
 
-        <textarea style="margin-left:90px" ;name="history" cols="125" label="notes" rows="40" wrap="virtual"
+            </div>
+        </form>
+    </div>
+
+        <textarea style="margin-left:90px" ;name="history" cols="205" label="notes" rows="35" wrap="virtual"
             id="content" disabled>CW{{ $week }}&#13;&#10;
 @if ($country === "HK")
 https://static-hk.zacdn.com
@@ -499,6 +518,12 @@ ZH
 
 </div>
         <script>
+            $('#file-upload').change(function() {
+                var i = $(this).prev('label').clone();
+                var file = $('#file-upload')[0].files[0].name;
+                $(this).prev('label').text(file);
+            });
+
             $(document).ready(function() {
 
                 function saveTextAsFile() {
