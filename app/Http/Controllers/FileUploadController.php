@@ -34,19 +34,11 @@ class FileUploadController extends Controller
             // '*.naming_convention' => 'required'
         ])->validate();
 
-
-        $date = new DateTime(now());
-        $timezone = new DateTimeZone('Asia/Kuala_Lumpur');
-
-        $local = $date->setTimezone($timezone);
-
-        $country = $results[0]['country'];
-        $week = $local->format('W');
-
-        // // dd($week);
         // dd($results);
+        $country = $results[0]['country'];
+        $week = $results[0]['cw_start_date'];
 
-        return view('result')->with('results', $results)->with('week', $week + 2)->with('country', $country);
+        return view('result')->with('results', $results)->with('week', $week)->with('country', $country);
 
     }
 }

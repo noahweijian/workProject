@@ -446,7 +446,7 @@
     </div>
 
         <textarea style="margin-left:90px" ;name="history" cols="205" label="notes" rows="35" wrap="virtual"
-            id="content" disabled>CW{{ $week }}&#13;&#10;
+            id="content" disabled>{{ $week }}&#13;&#10;
 @if ($country === "HK")
 https://static-hk.zacdn.com
 
