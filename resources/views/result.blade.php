@@ -555,7 +555,7 @@ ZH
                         type: 'text/plain'
                     });
                     // Specify the name of the file to be saved
-                    var fileNameToSaveAs = document.getElementById('name').value + {{ $week }} + ".txt";
+                    var fileNameToSaveAs = document.getElementById('name').value + {!! json_encode($week) !!} + ".txt";
 
                     // Optionally allow the user to choose a file name by providing
                     // an imput field in the HTML and using the collected data here
