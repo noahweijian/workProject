@@ -424,26 +424,6 @@
             </div>
         @endif
     </div>
-    <div
-        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-
-        <form action="{{ route('file.upload.post') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="row">
-                <label for="file-upload" class="btn btn-outline-secondary">
-                    Upload Another File
-                </label>
-                {{-- <div class="col-md-6"> --}}
-                <input type="file" name="file" class="form-control" id="file-upload" style="display: none">
-                {{-- </div> --}}
-
-                <div class="justify-center">
-                    <button type="submit" class="btn btn-success">Upload</button>
-                </div>
-
-            </div>
-        </form>
-    </div>
 
         <textarea style="margin-left:90px" ;name="history" cols="205" label="notes" rows="35" wrap="virtual"
             id="content" disabled>{{ $week }}&#13;&#10;
