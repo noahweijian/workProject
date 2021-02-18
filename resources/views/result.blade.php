@@ -493,6 +493,7 @@ ENDS IN
 {{ $result['event_label_men'] }}
 @endif
 &#13;
+@if ($result['onsite_placement'] == "N1" || $result['onsite_placement'] == "N2" || $result['onsite_placement'] == "CU1" || $result['onsite_placement'] == "CU2" || $result['onsite_placement'] == "CU3" || $result['onsite_placement'] == "CU4" || $result['onsite_placement'] == "L1" || $result['onsite_placement'] == "L2" || $result['onsite_placement'] == "L3" || $result['onsite_placement'] == "L4" || $result['onsite_placement'] == "L5" || $result['onsite_placement'] == "L6")
 ------------------TITLE/SUBTITLE----------
 @isset($result['title'], $result['subtitle'])
 {{ $result['title'] }}
@@ -506,6 +507,7 @@ ENDS IN
 @endisset
 @endif
 &#13;
+@endif
 ---------------------VISUAL---------------
 @if ($result['country'] === 'HK')
 EN
