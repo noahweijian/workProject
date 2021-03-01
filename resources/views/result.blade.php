@@ -446,7 +446,7 @@ right: #8bfcde (Font-color:#000)
 <div class="box"><img src="https://static-hk.zacdn.com/cms/2020/cw50/Innisfree/en/DESKTOP_LP.jpg" alt="" /></div>
 
 **** CD TIMER COPIES ****
-ENDS IN
+DEAL ENDS IN
 限時優惠即將結束
 
 熱門品牌
