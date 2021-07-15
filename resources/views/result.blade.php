@@ -427,26 +427,23 @@
 
         <textarea style="margin-left:90px" ;name="history" cols="205" label="notes" rows="35" wrap="virtual"
             id="content" disabled>{{ $week }}&#13;&#10;
-@if ($country === "HK")
-https://static-hk.zacdn.com
+@if ($country === "TW")
+https://static-tw.zacdn.com
 
 *LEFT/RIGHT SKINNY COLOUR CWXX*
 Kids:
 left: #fe4f3b (Font-color:#fff)
 right: #8bfcde (Font-color:#000)
 
-Shop Now
-立即搶購
 
 Men:
 left: #fe4f3b (Font-color:#fff)
 right: #8bfcde (Font-color:#000)
 
 **** LP BANNER ****
-<div class="box"><img src="https://static-hk.zacdn.com/cms/2020/cw50/Innisfree/en/DESKTOP_LP.jpg" alt="" /></div>
+<div class="box"><img src="https://static-tw.zacdn.com/cms/2020/cw50/Innisfree/en/DESKTOP_LP.jpg" alt="" /></div>
 
 **** CD TIMER COPIES ****
-DEAL ENDS IN
 限時優惠即將結束
 
 熱門品牌
@@ -493,10 +490,13 @@ DEAL ENDS IN
 {{ $result['event_label_men'] }}
 @endif
 &#13;
-@if ($result['onsite_placement'] == "N1" || $result['onsite_placement'] == "N2" || $result['onsite_placement'] == "CU1" || $result['onsite_placement'] == "CU2" || $result['onsite_placement'] == "CU3" || $result['onsite_placement'] == "CU4" || $result['onsite_placement'] == "L1" || $result['onsite_placement'] == "L2" || $result['onsite_placement'] == "L3" || $result['onsite_placement'] == "L4" || $result['onsite_placement'] == "L5" || $result['onsite_placement'] == "L6")
+@if ($result['onsite_placement'] == "N1" || $result['onsite_placement'] == "N2" || $result['onsite_placement'] == "CU1" || $result['onsite_placement'] == "CU2" || $result['onsite_placement'] == "CU3" || $result['onsite_placement'] == "CU4" || $result['onsite_placement'] == "L1" || $result['onsite_placement'] == "L2" || $result['onsite_placement'] == "L3" || $result['onsite_placement'] == "L4" || $result['onsite_placement'] == "L5" || $result['onsite_placement'] == "L6" || $result['onsite_placement'] == "Skinny Left (Segment)" || $result['onsite_placement'] == "Skinny Right (Segment)")
 ------------------TITLE/SUBTITLE----------
-@isset($result['title'], $result['subtitle'])
+@isset($result['title'])
 {{ $result['title'] }}
+@endisset
+
+@isset($result['subtitle'])
 {{ $result['subtitle'] }}
 @endisset
 

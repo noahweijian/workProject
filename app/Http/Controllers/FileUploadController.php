@@ -38,6 +38,8 @@ class FileUploadController extends Controller
         $country = $results[0]['country'];
         $week = $results[0]['cw_start_date'];
 
+        // dd($results);
+
         return view('result')->with('results', $results)->with('week', $week)->with('country', $country);
 
     }
