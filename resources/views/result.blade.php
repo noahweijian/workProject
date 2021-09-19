@@ -451,6 +451,9 @@ right: #8bfcde (Font-color:#000)
 &#13;&#10;@foreach ($results as $result)&#13;
 
 ************************* @if (isset($result['vc'])){{ $result['vc'] }}@else{{ $result['campaign_id'] }}@endif ************************&#13;&#10;
+-----------------TRELLO-----------
+{{ $result['link_to_trellogdrive'] }}
+&#13;
 -----------------PLACEMENT-----------
 {{ $result['onsite_placement'] }} @isset($result['flash_sale'])
  FS
