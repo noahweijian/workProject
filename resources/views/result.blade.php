@@ -491,6 +491,8 @@ right: #8bfcde (Font-color:#000)
 {{ $result['event_label_women'] }}
 @elseif ($result['segment'] === "Men")
 {{ $result['event_label_men'] }}
+@elseif ($result['segment'] === "Sports")
+{{ $result['event_label_sports'] }}
 @endif
 &#13;
 @if ($result['onsite_placement'] == "N1" || $result['onsite_placement'] == "N2" || $result['onsite_placement'] == "CU1" || $result['onsite_placement'] == "CU2" || $result['onsite_placement'] == "CU3" || $result['onsite_placement'] == "CU4" || $result['onsite_placement'] == "L1" || $result['onsite_placement'] == "L2" || $result['onsite_placement'] == "L3" || $result['onsite_placement'] == "L4" || $result['onsite_placement'] == "L5" || $result['onsite_placement'] == "L6" || $result['onsite_placement'] == "Skinny Left (Segment)" || $result['onsite_placement'] == "Skinny Right (Segment)")
